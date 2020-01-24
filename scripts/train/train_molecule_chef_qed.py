@@ -50,9 +50,9 @@ class Params(object):
         self.path_products_train = path.join(processed_data_dir, 'train_products.txt')
         self.path_products_val = path.join(processed_data_dir, 'valid_products.txt')
 
-        self.num_epochs = 100
-        self.batch_size = 25
-        self.learning_rate = 0.001
+        self.num_epochs = 2 #100
+        self.batch_size = 1000 #25
+        self.learning_rate = 0.01 #0.001
 
         self.lr_reduction_interval = 40
         self.lr_reduction_factor = 0.1
@@ -313,7 +313,7 @@ def main(params: Params):
 
     # Train!
     for epoch_num in range(params.num_epochs):
-        print(f"We are starting epoch {epoch_num}")
+        print(f"We are starting epoch {epoch_num} out of {params.num_epochs}")
         tb_writer_train.add_scalar("epoch_num", epoch_num)
         setup_for_train()
         train(train_dataloader, mc_wae, optimizer, optimizer_step, params.cuda_details, tb_writer_train,

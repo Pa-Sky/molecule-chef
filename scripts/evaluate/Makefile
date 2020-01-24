@@ -2,10 +2,10 @@
 # This MAKEFILE can be used inside the Docker container to run the various experiments
 # It implements the steps documented in the respective readme's
 
-py_4_mchef = /opt/conda/envs/py36_py121/bin/python
-py_4_mtransformer = /opt/conda/envs/py36_py041/bin/python
-mtransformer_dir = /molecular_transformer
-current_dir := /molecule_chef/scripts/evaluate
+py_4_mchef = /scratch-ssd/pastin/anaconda/envs/py36/bin
+py_4_mtransformer = /scratch-ssd/pastin/anaconda/envs/py36/bin
+mtransformer_dir = /users/pastin/Documents/molecule-chef/molecular_transformer
+current_dir := /users/pastin/Documents/molecule-chef/scripts/evaluate
 
 all:
 	@echo "Call make gen, make opt or make retro to run the respective experiments."
